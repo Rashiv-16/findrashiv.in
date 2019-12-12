@@ -137,6 +137,7 @@ body {
 
 .intro-sub1 {
     /* opacity: 1; */
+    text-align: center
     transition: transform 1s,
                 opacity 0.3s;
 }
