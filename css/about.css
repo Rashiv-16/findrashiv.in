@@ -66,6 +66,8 @@ body {
     background-origin: border-box;
     color: #3E606F;
     margin-top: 1.5rem;
+
+    transition: all 0.3s linear;
     
     
     
@@ -100,6 +102,8 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     line-height: 1;
+
+    transition: all 0.5s linear;
     /* height: 50%; */
     /* margin-top: 0.5rem; */
     /* align-self: flex-end; */
@@ -137,6 +141,8 @@ body {
     /* margin-bottom: 1.5px; */
     letter-spacing: 1px;
     color: rgb(35, 54, 62);
+
+    word-wrap: break-word;
     /* border: 1px solid greenyellow; */
 }
 
@@ -147,6 +153,8 @@ body {
 
 .right-1 > p, .right-2 > p, .right-3 > .right-3A > article > p, .right-3 > .right-3B > p, .right-4 > p, .right-5 > p {
     color: #91AA9D;
+
+    /* transition: all 0.5s linear; */
 }
 
 .right-wrapper {
@@ -191,3 +199,52 @@ body {
      /* border: 1px solid red; */
 
  }
+
+ @media screen and (max-width: 950px), (max-height: 950px)  {
+     /* body {font-size: 5rem;} */
+     .left-3 > p, .left-4 > p, .right-1 > p, .right-2  > p, .right-3 > .right-3A > article > p, .right-3 > .right-3B > p, .right-4 > p, .right-5 > p, .left-5 > p {
+        font-size: 1.1rem;
+    }
+
+    .left-2 > h1 {
+        font-size: 3rem;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        line-height: 1;
+    }
+
+    .left-1 {
+        width: 15rem;
+        height: 15rem;   
+    }
+ }
+
+ @media screen and (max-width: 800px), (max-height: 800px) {
+    .left-3 > p, .left-4 > p, .right-1 > p, .right-2  > p, .right-3 > .right-3A > article > p, .right-3 > .right-3B > p, .right-4 > p, .right-5 > p, .left-5 > p {
+       font-size: 1rem;
+   }
+
+   .left-2 > h1 {
+       font-size: 2.2rem;
+   }
+
+   .left-1 {
+       width: 15rem;
+       height: 15rem;   
+   }
+}
+
+ @media print and (max-width: 800px) {
+    .left-3 > p, .left-4 > p, .right-1 > p, .right-2  > p, .right-3 > .right-3A > article > p, .right-3 > .right-3B > p, .right-4 > p, .right-5 > p, .left-5 > p {
+       font-size: 1rem;
+   }
+
+   .left-2 > h1 {
+       font-size: 2.5rem;
+   }
+
+   .left-1 {
+       width: 15rem;
+       height: 15rem;   
+   }
+}
