@@ -124,23 +124,53 @@
         let right = document.querySelector('.right-wrapper')
         let slider = document.getElementById('slider')
         let hamburger = document.querySelector('.menu-link')
-        hamburger.addEventListener('click', (e) => {
-            e.stopPropagation()
-            e.preventDefault()
+
+        slideIn = () => {
             slider.style.display = 'flex'
-            setInterval(() => {
+            setTimeout(() => {
                 slider.style.transform = 'translateX(0)'
-            }, 100)
+            }, 50)
+            // slider.classList.toggle('slide-in')
             console.log(1)
-            right.addEventListener('click', () => {
-            slider.style.transform = 'translateX(-30vw)'
-            setInterval(() => {
+        }
+
+        slideOut = () => {
+                slider.style.transform = 'translateX(-30vw)'
+            setTimeout(() => {
                 slider.style.display = 'none'
-                right.removeEventListener('click', null)
-            }, 1000)
-            console.log(2)
-        })
-        })
+                console.log(2)
+            }, 600)
+
+            console.log('out')
+        }
+
+        hamburger.addEventListener('click', slideIn)
+        
+        right.addEventListener('click', slideOut)
+        // hamburger.addEventListener('click', (e) => {
+        //     slider.style.display = 'flex'
+        //     setInterval(() => {
+        //         slider.style.transform = 'translateX(0)'
+        //     }, 100)
+        //     console.log(1)
+        // })
+        
+        
+            
+        // slideOut = () => {
+        //     slider.style.transform = 'translateX(-30vw)'
+        //     setInterval(() => {
+        //         slider.style.display = 'none'
+        //         right.removeEventListener('click', slideOut)
+                
+        //     }, 1000)
+        //     console.log(2)
+        // }
+        // right.addEventListener('click', slideOut)
+        
+            
+        
+        
 
         
     </script>
