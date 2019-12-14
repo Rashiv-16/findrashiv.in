@@ -14,6 +14,7 @@
             <svg class="menu" viewBox="0 0 128 128"><title>Menu</title><rect width="128" height="8"/><rect y="60" width="128" height="8"/><rect y="120" width="128" height="8"/></svg>
         </a>
         <div id='slider' class="slider">
+            <div class="close">X</div>
             <nav class="navbar">
                 <a href="index.html"class="logo-mini-container">
                     <svg class="logo-mini" viewBox="0 0 128 128"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#d87093;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><rect class="cls-1" x="18" width="4" height="128"/><polygon class="cls-1" points="128 125.86 128 128 122.34 128 0 81.8 0 77.31 60.21 40.32 0 2.36 0 0 3.75 0 67.79 40.36 4.52 79.23 128 125.86"/><rect class="cls-2" x="27.85" y="81.62" width="2" height="51.26" transform="translate(-81.7 96.61) rotate(-69.44)"/><rect class="cls-2" x="91.85" y="71.76" width="2" height="51.26" transform="translate(-30.94 150.13) rotate(-69.44)"/></g></g></svg> 
@@ -124,6 +125,7 @@
         let right = document.querySelector('.right-wrapper')
         let slider = document.getElementById('slider')
         let hamburger = document.querySelector('.menu-link')
+        let close = document.querySelector('.close')
 
         slideIn = () => {
             slider.style.display = 'flex'
@@ -147,6 +149,8 @@
         hamburger.addEventListener('click', slideIn)
         
         right.addEventListener('click', slideOut)
+        close.addEventListener('click', slideOut)
+        
         // hamburger.addEventListener('click', (e) => {
         //     slider.style.display = 'flex'
         //     setInterval(() => {
