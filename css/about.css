@@ -5,7 +5,7 @@
 }
 
 html {
-    /* background: #001d29; */
+    background: #001d29;
 }
 
 body {
@@ -17,7 +17,133 @@ body {
     /* background: #3E606F; */
     /* #91AA9D */
     color: #FCFFF5;
+    opacity: 0;
+    transition: 0.8s;
 
+    position: relative;
+
+
+}
+
+.hamburger-wrapper {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    /* width: 8rem; */
+    /* height: 4rem; */
+}
+
+.menu {
+    /* border: 1px solid green; */
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+    fill: rgb(35, 54, 62);
+}
+
+.menu-link:hover {
+    cursor: pointer;
+}
+
+.slider {
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    width: 30vw;
+    height: 100vh;
+    z-index: 5;
+    background: rgb(29, 34, 31);
+
+    display: none;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+
+    transform: translateX(-30vw);
+
+    transition: transform 0.6s;
+
+    /* display: none; */
+}
+
+.navbar {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0 auto;
+    width: 90%;
+    height: 60vh;
+
+    /* border: 1px solid blanchedalmond; */
+    margin-bottom: 5rem;
+}
+
+.logo-mini-container, .navigation, .download{
+    /* height: calc(100vh/3); */
+    /* border: 1px solid green; */
+}
+
+.navigation {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+
+    /* margin-top: rem; */
+
+   
+}
+
+.nav-links  {
+    width: 60%;
+    padding: 0.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    /* border: 1px solid yellow; */
+    border-radius: 5px;
+
+    border: 1px solid white;
+    background: rgb(68, 68, 68);
+    /* background: linear-gradient(30deg, rgba(255, 255, 255, 0) 0% 60%, rgba(255, 255, 255, 0.1) 80% 100%); */
+
+    transition: all 0.3s;
+}
+
+.nav-links:hover {
+    border: 1px solid white;
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: linear-gradient(30deg, rgba(0, 0, 0, 0.01) 0% 60%, rgba(0, 0, 0, 0.01) 80% 100%);
+}
+
+.logoo {
+    width: 2.7rem;
+    height: 3rem;
+}
+
+.logo-mini-container {
+    width: 10rem;
+}
+
+.download {
+    width: 40%;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    padding: 0.7rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    /* font-weight: 300; */
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: linear-gradient(30deg, rgba(0, 0, 0, 0.01) 0% 60%, rgba(0, 0, 0, 0.01) 80% 100%);
+
+}
+
+.download:hover {
+  cursor: pointer;
 
 }
 
@@ -66,6 +192,8 @@ body {
     background-origin: border-box;
     color: #3E606F;
     margin-top: 1.5rem;
+
+    transition: all 0.3s linear;
     
     
     
@@ -100,6 +228,8 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     line-height: 1;
+
+    transition: all 0.5s linear;
     /* height: 50%; */
     /* margin-top: 0.5rem; */
     /* align-self: flex-end; */
@@ -137,6 +267,8 @@ body {
     /* margin-bottom: 1.5px; */
     letter-spacing: 1px;
     color: rgb(35, 54, 62);
+
+    word-wrap: break-word;
     /* border: 1px solid greenyellow; */
 }
 
@@ -147,6 +279,8 @@ body {
 
 .right-1 > p, .right-2 > p, .right-3 > .right-3A > article > p, .right-3 > .right-3B > p, .right-4 > p, .right-5 > p {
     color: #91AA9D;
+
+    /* transition: all 0.5s linear; */
 }
 
 .right-wrapper {
@@ -191,3 +325,52 @@ body {
      /* border: 1px solid red; */
 
  }
+
+ @media screen and (max-width: 950px), (max-height: 950px)  {
+     /* body {font-size: 5rem;} */
+     .left-3 > p, .left-4 > p, .right-1 > p, .right-2  > p, .right-3 > .right-3A > article > p, .right-3 > .right-3B > p, .right-4 > p, .right-5 > p, .left-5 > p {
+        font-size: 1.1rem;
+    }
+
+    .left-2 > h1 {
+        font-size: 3rem;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        line-height: 1;
+    }
+
+    .left-1 {
+        width: 15rem;
+        height: 15rem;   
+    }
+ }
+
+ @media screen and (max-width: 800px), (max-height: 800px) {
+    .left-3 > p, .left-4 > p, .right-1 > p, .right-2  > p, .right-3 > .right-3A > article > p, .right-3 > .right-3B > p, .right-4 > p, .right-5 > p, .left-5 > p {
+       font-size: 1rem;
+   }
+
+   .left-2 > h1 {
+       font-size: 2.2rem;
+   }
+
+   .left-1 {
+       width: 15rem;
+       height: 15rem;   
+   }
+}
+
+ @media print and (max-width: 800px) {
+    .left-3 > p, .left-4 > p, .right-1 > p, .right-2  > p, .right-3 > .right-3A > article > p, .right-3 > .right-3B > p, .right-4 > p, .right-5 > p, .left-5 > p {
+       font-size: 1rem;
+   }
+
+   .left-2 > h1 {
+       font-size: 2.5rem;
+   }
+
+   .left-1 {
+       width: 15rem;
+       height: 15rem;   
+   }
+}
