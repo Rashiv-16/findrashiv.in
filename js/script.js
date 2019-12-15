@@ -1,20 +1,12 @@
-// window.onload = () => {
-//     let body = document.querySelector('body')
-
-
-    
-
-// }
 window.onload =  () => {
     let body = document.querySelector('body')
     body.style.opacity = 1
 }
 
-
 const introOne = document.querySelector('.intro-sub1')
 const introTwo = document.querySelector('.intro-sub2')
-const timeDelay = 3500
-const opacityDelay = 400
+const timeDelay = 3500  //3500
+const opacityDelay = 500  //500
 
 animate1 = () => {
     introOne.style.opacity = '0'
@@ -22,9 +14,7 @@ animate1 = () => {
         introOne.style.display = 'none'
         introOne.style.transform = 'translateX(-25%)'
         introTwo.style.display = 'block'
-        setTimeout(animate2, 0)
-
-        
+        setTimeout(animate2, 0)  
     }, opacityDelay)
 }
 
@@ -34,8 +24,6 @@ animate2 = () => {
     setTimeout(() => {
         introTwo.style.opacity = '0'
         setTimeout(animate3, opacityDelay)
-        // animate1();
-
     }, timeDelay)
 }
 

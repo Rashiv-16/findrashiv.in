@@ -14,6 +14,7 @@
             <svg class="menu" viewBox="0 0 128 128"><title>Menu</title><rect width="128" height="8"/><rect y="60" width="128" height="8"/><rect y="120" width="128" height="8"/></svg>
         </a>
         <div id='slider' class="slider">
+            <div class="close">X</div>
             <nav class="navbar">
                 <a href="index.html"class="logo-mini-container">
                     <svg class="logo-mini" viewBox="0 0 128 128"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#d87093;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><rect class="cls-1" x="18" width="4" height="128"/><polygon class="cls-1" points="128 125.86 128 128 122.34 128 0 81.8 0 77.31 60.21 40.32 0 2.36 0 0 3.75 0 67.79 40.36 4.52 79.23 128 125.86"/><rect class="cls-2" x="27.85" y="81.62" width="2" height="51.26" transform="translate(-81.7 96.61) rotate(-69.44)"/><rect class="cls-2" x="91.85" y="71.76" width="2" height="51.26" transform="translate(-30.94 150.13) rotate(-69.44)"/></g></g></svg> 
@@ -35,7 +36,7 @@
                 </div>
 
             </nav>
-        <button class="download">Download Resume</button>
+        <a download href="download/Full Stack Developer- Abhishek Yadav.pdf" class="download">Download Resume</a>
         </div>
     </div>
     <article class="main">
@@ -48,19 +49,19 @@
                 </div>
                 <div class="left-3">
                     <h2>Contact</h2>
-                    <p>+91 7000454035</p>
-                    <p>abhishekyaduvanshi22@gmail.com</p>
-                    <p>www.findrashiv.in</p>
+                    <p>&Theta;&nbsp+91 7000454035</p>
+                    <p>&Theta;&nbspabhishekyaduvanshi22@gmail.com</p>
+                    <p>&Theta;&nbspwww.findrashiv.in</p>
                 </div>
                 <div class="left-4">
                     <h2>Social Media</h2>
-                    <p>www.github.com/Rashiv-16</p>
-                    <p>codepen.io/Rashiv</p>
+                    <p>&Theta;&nbspgithub.com/Rashiv-16</p>
+                    <p>&Theta;&nbspcodepen.io/Rashiv</p>
                 </div>
                 <div class="left-5">
                     <h2>Interests</h2>
-                    <p>Gaming</p>
-                    <p>Photography</p>
+                    <p>&Theta;&nbspGaming</p>
+                    <p>&Theta;&nbspPhotography</p>
                 </div>
             </div>
         </section>
@@ -98,7 +99,7 @@
                     </div>
                     <div class="right-3B">
                         <h2>Skills</h2>
-                        <p>Html <br>Css <br>Javascript <br>React <br>Node</p> <br>
+                        <p>Html <br>Css <br>Javascript <br>Scss <br>React <br>Node</p> <br>
                         <p>Others: <br>Adobe Illustrator <br>Implementation of 3D on web <br> and some popular libraries</p>
                     </div>
                 </div>
@@ -124,23 +125,56 @@
         let right = document.querySelector('.right-wrapper')
         let slider = document.getElementById('slider')
         let hamburger = document.querySelector('.menu-link')
-        hamburger.addEventListener('click', (e) => {
-            e.stopPropagation()
-            e.preventDefault()
+        let close = document.querySelector('.close')
+
+        slideIn = () => {
             slider.style.display = 'flex'
-            setInterval(() => {
+            setTimeout(() => {
                 slider.style.transform = 'translateX(0)'
-            }, 100)
+            }, 50)
+            // slider.classList.toggle('slide-in')
             console.log(1)
-            right.addEventListener('click', () => {
-            slider.style.transform = 'translateX(-30vw)'
-            setInterval(() => {
+        }
+
+        slideOut = () => {
+                slider.style.transform = 'translateX(-30vw)'
+            setTimeout(() => {
                 slider.style.display = 'none'
-                right.removeEventListener('click', null)
-            }, 1000)
-            console.log(2)
-        })
-        })
+                console.log(2)
+            }, 600)
+
+            console.log('out')
+        }
+
+        hamburger.addEventListener('click', slideIn)
+        
+        right.addEventListener('click', slideOut)
+        close.addEventListener('click', slideOut)
+        
+        // hamburger.addEventListener('click', (e) => {
+        //     slider.style.display = 'flex'
+        //     setInterval(() => {
+        //         slider.style.transform = 'translateX(0)'
+        //     }, 100)
+        //     console.log(1)
+        // })
+        
+        
+            
+        // slideOut = () => {
+        //     slider.style.transform = 'translateX(-30vw)'
+        //     setInterval(() => {
+        //         slider.style.display = 'none'
+        //         right.removeEventListener('click', slideOut)
+                
+        //     }, 1000)
+        //     console.log(2)
+        // }
+        // right.addEventListener('click', slideOut)
+        
+            
+        
+        
 
         
     </script>
