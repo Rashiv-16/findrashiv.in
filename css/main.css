@@ -137,12 +137,13 @@ body {
 
 .intro-sub1 {
     /* opacity: 1; */
-    text-align: center;
+    /* text-align: justify; */
     transition: transform 1s,
                 opacity 0.3s;
 }
 
 .intro-sub2 {
+    /* text-align: justify; */
     transition: transform 1s,
                 opacity 0.3s;
     opacity: 0;
@@ -255,3 +256,10 @@ body {
     border-radius: 5px;
 }
 
+
+@media screen and (max-width: 1170px) {
+
+    .intro {
+        font-size: 2rem;
+    }
+}

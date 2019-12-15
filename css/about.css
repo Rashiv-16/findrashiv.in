@@ -33,6 +33,28 @@ body {
     /* height: 4rem; */
 }
 
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    /* padding: 2rem; */
+    font-size: 1rem;
+    border: 1px solid white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    border-radius: 50%;
+    /* font-weight: 100; */
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
 .menu {
     /* border: 1px solid green; */
     width: 2rem;
@@ -41,7 +63,14 @@ body {
     fill: rgb(35, 54, 62);
 }
 
-.menu-link:hover {
+/* .menu-link {
+    border: 1px solid red;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+} */
+
+.menu:hover {
     cursor: pointer;
 }
 
@@ -65,10 +94,6 @@ body {
     /* display: none; */
 }
 
-.slide-out {
-
-}
-
 .slide-in {
     display: flex;
     transform: translateX(0);
@@ -89,11 +114,6 @@ body {
     margin-bottom: 5rem;
 }
 
-.logo-mini-container, .navigation, .download{
-    /* height: calc(100vh/3); */
-    /* border: 1px solid green; */
-}
-
 .navigation {
     width: 100%;
 
@@ -101,10 +121,7 @@ body {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-around;
-
-    /* margin-top: rem; */
-
-   
+ 
 }
 
 .nav-links  {
@@ -135,6 +152,7 @@ body {
 
 .logo-mini-container {
     width: 10rem;
+    margin-top: 2rem;
 }
 
 .download {
@@ -145,6 +163,8 @@ body {
     padding: 0.7rem;
     font-size: 1rem;
     letter-spacing: 1px;
+    text-align: center;
+    text-decoration: none;
     /* font-weight: 300; */
     /* background: rgba(255, 255, 255, 0.1); */
     background: linear-gradient(30deg, rgba(0, 0, 0, 0.01) 0% 60%, rgba(0, 0, 0, 0.01) 80% 100%);
@@ -180,15 +200,6 @@ body {
     justify-content: center;
 }
 
-.left > div {
-    /* height: 20rem; */
-    /* width: 80%; */
-    /* max-width: 0rem; */
-    /* margin: 1rem; */
-    /* background: green; */
-    
-}
-
 .left-1 {
     width: 20rem;
     height: 20rem;
@@ -202,22 +213,13 @@ body {
     color: #3E606F;
     margin-top: 1.5rem;
 
-    transition: all 0.3s linear;
-    
-    
-    
+    transition: all 0.3s linear; 
 }
 
 .left-2, .left-3, .left-4, .left-5 {
     width: 100%;
-    height: 20rem;
-    /* margin-top: 2.2rem; */
-    
+    height: 20rem;  
     /* border: 1px solid red; */
-}
-
-.left-2 {
-    /* margin-top: 1.5rem; */
 }
 
 .left-2 {
@@ -335,7 +337,7 @@ body {
 
  }
 
- @media screen and (max-width: 950px), (max-height: 950px)  {
+ @media screen and (max-width: 950px)  {
      /* body {font-size: 5rem;} */
      .left-3 > p, .left-4 > p, .right-1 > p, .right-2  > p, .right-3 > .right-3A > article > p, .right-3 > .right-3B > p, .right-4 > p, .right-5 > p, .left-5 > p {
         font-size: 1.1rem;
@@ -381,5 +383,13 @@ body {
    .left-1 {
        width: 15rem;
        height: 15rem;   
+   }
+
+   .hamburger-wrapper {
+       display: none;
+   }
+
+   html {
+       background: none;
    }
 }
