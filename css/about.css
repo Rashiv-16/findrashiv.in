@@ -337,7 +337,7 @@ body {
 
  }
 
- @media screen and (max-width: 950px)  {
+ @media screen and (max-width: 950px), (max-height: 950px)  {
      /* body {font-size: 5rem;} */
      .left-3 > p, .left-4 > p, .right-1 > p, .right-2  > p, .right-3 > .right-3A > article > p, .right-3 > .right-3B > p, .right-4 > p, .right-5 > p, .left-5 > p {
         font-size: 1.1rem;
@@ -356,7 +356,7 @@ body {
     }
  }
 
- @media screen and (max-width: 800px), (max-height: 800px) {
+ @media screen and (max-width: 800px) {
     .left-3 > p, .left-4 > p, .right-1 > p, .right-2  > p, .right-3 > .right-3A > article > p, .right-3 > .right-3B > p, .right-4 > p, .right-5 > p, .left-5 > p {
        font-size: 1rem;
    }
