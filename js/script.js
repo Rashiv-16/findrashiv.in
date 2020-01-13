@@ -3,6 +3,7 @@ window.onload =  () => {
     body.style.opacity = 1
 }
 
+// Animation for Introduction section
 const introOne = document.querySelector('.intro-sub1')
 const introTwo = document.querySelector('.intro-sub2')
 const timeDelay = 3500  //3500
@@ -40,3 +41,57 @@ animate3 = () => {
 }
 
 setTimeout(animate1, timeDelay)
+
+//carousel functionality for showcase
+
+const next = document.querySelector('.next')
+const prev = document.querySelector('.prev')
+const slides = document.querySelectorAll('.show')
+
+
+nextHandler = () => {
+    const current = document.querySelector('.current')
+    console.log('yo')
+    current.classList.remove('current')
+    
+    if(current.nextElementSibling){
+        current.nextElementSibling.classList.add('current')
+        console.log(current.nextElementSibling)
+        // current.classList.remove('current')
+
+    } else {
+        slides[0].classList.add('current')
+    }
+
+    // setTimeout(() => {
+    //     current.classList.remove('current')
+    // })
+    
+}
+
+prevHandler = () => {
+    const current = document.querySelector('.current')
+    console.log('yo')
+    current.classList.remove('current')
+    
+    if(current.previousElementSibling){
+        current.previousElementSibling.classList.add('current')
+        console.log(current.nextElementSibling)
+        current.classList.remove('current')
+
+    } else {
+        slides[slides.length - 1].classList.add('current')
+    }
+}
+
+next.addEventListener('click', ()=> {
+    nextHandler()
+})
+
+prev.addEventListener('click', ()=> {
+    prevHandler()
+})
+
+setInterval(() => {
+    nextHandler()
+}, 5000)
