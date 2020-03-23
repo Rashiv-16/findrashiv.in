@@ -1,76 +1,50 @@
-let canvas = document.getElementById('canvas'),
-    c = canvas.getContext('2d'),
-    width = canvas.width = window.innerWidth,
-    height = canvas.height = window.innerHeight
+let canvas = document.querySelector('canvas')
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
+let c = canvas.getContext('2d')
 
-let nodes = []
-let maxDist = 100
+function Particles (x, y, r) {
 
-window.addEventListener('resize', function() {
-    width = canvas.width = window.innerWidth,
-    height = canvas.height = window.innerHeight
-})
+    this.x = x;
+    this.y = y;
+    this.r = r;
 
-
-for(let i=0; i<150; i++) {
-    nodes.push({
-        x : Math.random() * width,
-        y : Math.random() * height,
-        vx: Math.random() * 2 - 1,
-        vy: Math.random() * 2 - 1
-    }) 
-}
-
-
-update()
-
-function update() {
-    requestAnimationFrame(update)
-    // c.fillStyle = 'black'
-    // c.fillStyle = '#131626'
-    // c.fillStyle = '#193441'
-    // c.fillStyle = '#2C3E50'
-    // c.fillStyle = '#002635'
-    c.fillStyle = '#001d29'
-    c.fillRect (0, 0, width, height)
-    for (i=0; i<nodes.length; i++) {
-        let node = nodes[i];
-        node.x += node.vx
-        node.y += node.vy
-        c.beginPath()
-        c.arc(node.x, node.y, 2, 0, Math.PI * 2)
-        c.fillStyle = 'white'
-        c.fill();
-
-        if(node.x > width) {
-            node.x = 0
-        } else if (node.x < 0) {
-            node.x = width
-        }
-
-        if(node.y > height) {
-            node.y = 0
-        } else if (node.y < 0) {
-            node.y = height
-        }
+    this.update = () => {
+        this.draw()
     }
 
-    for(i=0; i<nodes.length-1; i++){
-        nodeA = nodes[i]
-        for( j= i+1; j<nodes.length; j++){
-            nodeB = nodes[j]
-            
-            let dx = nodeB.x - nodeA.x
-            let dy = nodeB.y - nodeA.y
-            let dist = Math.sqrt(dx*dx + dy*dy)
-            if(dist < maxDist) {
-                c.lineWidth = 1 - dist/maxDist
-                c.beginPath()
-                c.moveTo(nodeA.x, nodeA.y)
-                c.lineTo(nodeB.x, nodeB.y)
-                c.strokeStyle = 'white'
-                c.stroke();
-            }    
-        }
-    }  
+    this.draw = () => {
+        c.beginPath();
+        c.arc(this.x , this.y, this.r, 0, Math.PI *2, false)
+        c.fillStyle = '#2a2a2a'
+        c.fill();
+        c.shadowBlur = 20
+        c.shadowColor = 'black'
+        c.shadowOffsetX = 0
+        c.closePath();
+    }
 }
+
+randomFunction = (min, max) => {
+    return Math.random() * (max - min + 1) + min
+
+}
+
+let a = randomFunction(0, canvas.width)
+let b = randomFunction(0, canvas.height)
+let d = randomFunction(0.5, 1)
+
+let p1 = new Particles(a, b, d)
+
+particleArray = []
+for(let i=0; i<10; i++) {
+    let a = randomFunction(0, canvas.width)
+    let b = randomFunction(0, canvas.height)
+    let d = randomFunction(1, 2)
+
+    particleArray.push(new Particles(a, b, d))
+}
+
+particleArray.forEach(particle => {
+    particle.update()
+});
