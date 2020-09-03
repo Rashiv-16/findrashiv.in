@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #2a2a2a;
+            color: cornsilk;
+            min-height: 100vh;
+
+            display: grid;
+            place-items: center;
+        }
+
+        body::-webkit-scrollbar {
+            background-color: transparent;
+            width: 20px;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #333333;
+            border: 2px solid #2a2a2a;
+        }
+
+        body::-webkit-scrollbar-track {
+            background-color: #2a2a2a;
+            border-radius: 5px;
+        }
+
+        .outer-div {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            align-content: center;
+            flex-flow: column nowrap;
+            border-radius: 5px;
+            background-color: #333333;
+            width: 80%;
+            max-width: 800px;
+            min-height: 250px;
+            margin-bottom: 50px;
+        }
+
+        .outer-div:first-child {
+            letter-spacing: 2px;
+            font-size: 15px;
+            padding: 20px;
+            margin-top: 50px;
+            min-height: 80px;
+        }
+
+        p {
+            letter-spacing: 2px;
+            height: 80%;
+            font-size: 15px;
+            padding: 20px;
+        }
+
+        a {
+            /* border-top: 1px solid goldenrod; */
+            width: 50%;
+            height: 100%;
+            font-size: 15px;
+            letter-spacing: 2px;
+            display: grid;
+            place-content: center;
+            color: cornsilk;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        a:hover {
+            background-color: #2a2a2ab7;
+        }
+
+        .inner-div {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            border-top: 1px solid goldenrod;
+            width: 100%;
+            height: 50px;
+        }
+
+        .first {
+            background-image: linear-gradient(to bottom, #2a2a2ab6, #2a2a2a), url('img/resume-builder.jpg');
+            background-size: 100% 100%;
+        }
+
+        .second {
+            background-image: linear-gradient(to bottom, #2a2a2ab6, #2a2a2a), url('img/landing-pages.jpg');
+            background-size: 100% 100%;
+        }
+
+        @media screen and (max-width: 700px) {
+            body {
+                    font-family: 'Roboto', sans-serif;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="outer-div">This page is updated once a week. It could be an update for an existing project or a new project.</div>
+    <div class="outer-div first">
+        <p>
+            I call this one a Resume Builder because it takes user's inputs and use this data to create resume. You can use different font size according to your need. You can choose different templates, the one you like.<br><br>
+            Libraries used: Dat.gui, Express, Hbs, Puppeteer. <br>
+            Tech used: Html, Css, Js, Node.
+        </p>
+        <div class="inner-div">
+            <a href="https://rashiv-resume-builder.herokuapp.com/" target="_blank" rel="noreferrer noopener">View it live!</a>
+            <a href="https://github.com/Rashiv-16/resume-builder" target="_blank" rel="noreferrer noopener">View source code!</a>
+        </div>
+    </div>
+    <div class="outer-div second">
+        <p>
+            This is a collection of different landing pages I built to hone my client side skills. A lot of these are coming from my ideas but I am also inspired from others' works, arts and illustrations. <br><br>
+            Libraries used: none. <br>
+            Tech used: Html, Css, Js.
+        </p>
+        <div class="inner-div">
+            <a href="https://rashiv-resume-builder.herokuapp.com/" target="_blank" rel="noreferrer noopener">View it live!</a>
+            <a href="https://rashiv-resume-builder.herokuapp.com/" target="_blank" rel="noreferrer noopener">View source code!</a>
+        </div>
+    </div>
+    <div class="outer-div"></div>
+    <div class="outer-div"></div>
+    
+</body>
+</html>

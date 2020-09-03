@@ -2,6 +2,7 @@ let rightArrow = document.querySelector('.right-arrow')
 let leftArrow = document.querySelector('.left-arrow')
 let mainBg = document.querySelectorAll('.mainbg')
 let dot = document.querySelectorAll('.dot')
+let article = document.querySelector('article')
 
 count = 1
 opacity = 1
@@ -12,10 +13,10 @@ scale = 2
 rightArrowAnimation1 = () => {
     count -= 0.10
     opacity -= 0.10
+    scale -= 0.10
     mainBg[current].style.transform = `scale(${count})`
     mainBg[current].style.opacity = `${opacity}`
     dot[current].style.transform = `scale(${scale})`
-    scale -= 0.08
 
     if (count > 0) {
         requestAnimationFrame(rightArrowAnimation1)
@@ -34,10 +35,10 @@ rightArrowAnimation1 = () => {
 rightArrowAnimation2 = () => {
     count += 0.1
     opacity += 0.10
+    scale += 0.10
     mainBg[current + 1].style.transform = `scale(${count})`
     mainBg[current + 1].style.opacity = `${opacity}`
     dot[current + 1].style.transform = `scale(${scale})`
-    scale += 0.08
 
     if (count < 1) {
         requestAnimationFrame(rightArrowAnimation2)
@@ -53,6 +54,7 @@ rightArrowAnimation2 = () => {
 rightArrowFunction = () => {
     if (flag === 0) {
         flag = 1
+        touchCounter++
         rightArrowAnimation1()
     }
 
@@ -61,21 +63,16 @@ rightArrowFunction = () => {
 leftArrowAnimation1 = () => {
     count -= 0.10
     opacity -= 0.10
+    scale -= 0.10
     mainBg[current].style.transform = `scale(${count})`
     mainBg[current].style.opacity = `${opacity}`
     dot[current].style.transform = `scale(${scale})`
-    scale -= 0.08
 
     if (count > 0) {
         requestAnimationFrame(leftArrowAnimation1)
     }
 
     if (count <= 0) {
-
-        // console.log(123)
-        // mainBg[current].classList.add('display-none')
-        // mainBg[current + 1].classList.remove('display-none')
-        // rightArrowAnimation2()
         setTimeout(() => {
             mainBg[current].classList.add('display-none')
             mainBg[current - 1].classList.remove('display-none')
@@ -87,10 +84,10 @@ leftArrowAnimation1 = () => {
 leftArrowAnimation2 = () => {
     count += 0.1
     opacity += 0.10
+    scale += 0.1
     mainBg[current - 1].style.transform = `scale(${count})`
     mainBg[current - 1].style.opacity = `${opacity}`
     dot[current - 1].style.transform = `scale(${scale})`
-    scale += 0.08
 
     if (count < 1) {
         requestAnimationFrame(leftArrowAnimation2)
@@ -106,130 +103,54 @@ leftArrowAnimation2 = () => {
 leftArrowFunction = () => {
     if (flag === 0) {
         flag = 1
+        touchCounter--
+        console.log("yay")
         leftArrowAnimation1()
     }
-
 }
 
 rightArrow.addEventListener(('click'), rightArrowFunction)
 leftArrow.addEventListener(('click'), leftArrowFunction)
 
-// animateMotionLeft1 = () => {
+let initialX = null;
+let initialY = null;
+let initialTime = null;
+let touchCounter = 0;
 
-//         count = count + 20
-//         opacity = opacity - 0.05
-//         textCount = textCount + 5
-//         mainBg[current - 1].style.transform = `translateX(${-count}px)`
-//         mainBg[current - 1].style.opacity = `${opacity}`
-    
-//         if(count < 500) requestAnimationFrame(animateMotionLeft1)
-//         if(count === 500) {
-//             mainBg[current - 1].classList.remove('current')
-//             mainBg[current].classList.add('current')
-//             dot[current - 1].style.transform = `scale(1)`
-//             dot[current].style.transform = `scale(${1.8})`
-//             opacity = 0
-//             animateMotionLeft2()
-//     }
- 
-// }
+article.addEventListener('touchstart', (e) => {
+    initialX = e.touches[0].clientX;
+    initialY = e.touches[0].clientY;
+    initialTime = new Date;
+})
 
-// animateMotionLeft2 = () => {
-//     count = count - 20
-//     opacity = opacity + 0.05
-//     textCount = textCount - 5
-//     mainBg[current].style.transform = `translateX(${count}px)`
-//     mainBg[current].style.opacity = `${opacity}`
+article.addEventListener('touchmove', (e) => {
+    if(initialX === null) {
+        return ;
+    }
 
-//     if(count > 0) requestAnimationFrame(animateMotionLeft2)
-//     if (count === 0) opacity = 1
-// }
+    if(initialY === null) {
+        return ;
+    }
 
-// right = () => {
+    let currentX = e.touches[0].clientX;
+    let currentY = e.touches[0].clientY;
+    let currentTime = new Date;
 
-//     if (current === 0) {
-        
-//     }
+    let diffX = currentX - initialX;
+    let diffY = currentY - initialY;
+    let diffTime = currentTime.getTime() - initialTime.getTime();
 
-//     if (current === 1) {
-//         leftArrow.classList.remove('display-none')
-//         animateMotionLeft1()
-//         // rightArrow.removeEventListener('click')
-//     }
-
-//     if (current === 2) {
-//         rightArrow.classList.add('display-none')
-//         animateMotionLeft1()
-//     }
-
-//     // mainBg[current - 1].classList.remove('current')
-
-// }
-
-// animateMotionRight1 = () => {
-
-//         count = count + 20
-//         opacity = opacity - 0.05
-//         textCount = textCount + 5
-//         mainBg[current + 1].style.transform = `translateX(${count}px)`
-//         mainBg[current + 1].style.opacity = `${opacity}`
-    
-//         if(count < 500) requestAnimationFrame(animateMotionRight1)
-//         if(count === 500) {
-//             mainBg[current + 1].classList.remove('current')
-//             mainBg[current].classList.add('current')
-//             dot[current + 1].style.transform = `scale(1)`
-//             dot[current].style.transform = `scale(${1.8})`
-//             opacity = 0
-//             animateMotionRight2()
-//     }
-
-// }
-
-// animateMotionRight2 = () => {
-//     count = count - 20
-//     opacity = opacity + 0.05
-//     textCount = textCount - 5
-//     mainBg[current].style.transform = `translateX(${-count}px)`
-//     mainBg[current].style.opacity = `${opacity}`
-
-//     if(count > 0) requestAnimationFrame(animateMotionRight2)
-//     if (count === 0) opacity = 1
-// }
-
-// left = () => {
-
-//     if (current === 0) {
-//         leftArrow.classList.add('display-none')
-//         animateMotionRight1()
-//     }
-
-//     if (current === 1) {
-//         rightArrow.classList.remove('display-none')
-//         animateMotionRight1()
-//     }
-
-//     if (current === 2) {
-//         rightArrow.classList.add('display-none')
-//         animateMotionRight1()
-//     }
-
-
-// }
-
-
-// rightArrow.addEventListener('click', () => {
-//     if (count === 0) {
-//         window.requestAnimationFrame(right)
-//         current++
-//     }
-// })
-
-
-// leftArrow.addEventListener('click', () => {
-//     if (count === 0) {
-//         window.requestAnimationFrame(left)
-//         current--
-//     }
-// })
-
+    if(Math.abs(diffX) > Math.abs(diffY)) {
+        if(diffX > 100 && diffTime < 500 && diffTime > 300) {
+            if(touchCounter > 0 && touchCounter <= 3) {
+                leftArrowFunction() 
+            }
+        } else if (diffX < -100 && diffTime < 500 && diffTime > 300) {
+            if(touchCounter >= 0 && touchCounter < 2) {
+                rightArrowFunction() 
+            }
+        }
+    }
+    // initialX = null
+    // initialY = null
+})
