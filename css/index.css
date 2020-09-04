@@ -444,7 +444,8 @@ body::-webkit-scrollbar-track {
     }
 
     .main {
-        height: max-content;
+        height: 100vh;
+        min-height: max-content;
         width: 100%;
         flex-flow: column nowrap;
         justify-content: space-between;
@@ -490,7 +491,8 @@ body::-webkit-scrollbar-track {
 
     .article {
         width: 100%;
-        min-height: 100vh;
+        height: 100vh;
+        min-height: max-content;
         /* border: 1px solid white; */
     }
 
