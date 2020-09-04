@@ -141,11 +141,11 @@ article.addEventListener('touchmove', (e) => {
     let diffTime = currentTime.getTime() - initialTime.getTime();
 
     if(Math.abs(diffX) > Math.abs(diffY)) {
-        if(diffX > 100 && diffTime < 500 && diffTime > 300) {
+        if(diffX > 80 && diffTime < 600 && diffTime > 200) {
             if(touchCounter > 0 && touchCounter <= 3) {
                 leftArrowFunction() 
             }
-        } else if (diffX < -100 && diffTime < 500 && diffTime > 300) {
+        } else if (diffX < -80 && diffTime < 600 && diffTime > 200) {
             if(touchCounter >= 0 && touchCounter < 2) {
                 rightArrowFunction() 
             }
