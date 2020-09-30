@@ -11,12 +11,7 @@
     margin: 0;
     box-sizing: border-box;
     transition: all 0.3s ease-in-out;
-    /* border: 1px solid greenyellow; */
 }
-
-/* html {
-    scroll-snap-type: y mandatory;
-} */
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -27,13 +22,9 @@ body {
     height: 100vh;
 }
 
-article, main {
-    scroll-snap-align: center;
-}
-
 body::-webkit-scrollbar {
     background-color: transparent;
-    width: 2vw;
+    width: 1vw;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -121,7 +112,7 @@ body::-webkit-scrollbar-track {
     justify-content: center;
     align-items: center;
     /* padding: var(--intro-wrapper-padding); */
-    height: calc(100vh - 70px);
+    /* height: calc(100vh - 70px); */
     width: 100%;
     height: inherit;
     /* border: 1px solid white; */
@@ -202,7 +193,7 @@ body::-webkit-scrollbar-track {
 
 
 .skill, .project, .contact {
-    min-height: 80%;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
@@ -329,10 +320,6 @@ body::-webkit-scrollbar-track {
     background-size: 100% 100%;
 }
 
-.contact-content {
-    justify-content: center;
-    align-items: center;
-}
 
 .contact-content > div {
     width: 600px;
@@ -342,7 +329,6 @@ body::-webkit-scrollbar-track {
     align-items: center;
     background-color: #2a2a2a;
     border: 1px solid goldenrod;
-    /* box-shadow: 0 0 20px #333333; */
 }
 
 .contact-content > div > h3 {
@@ -370,7 +356,7 @@ body::-webkit-scrollbar-track {
     position: absolute;
     stroke: rgba(255, 217, 0, 0.08);
     filter: blur(10px);
-    z-index: -1;
+    z-index: 0;
 }
 
 
@@ -419,13 +405,12 @@ body::-webkit-scrollbar-track {
     display: none !important;
 }
 
-
 @media screen and (max-width: 1400px) {
     body {
         flex-flow: column nowrap;
         height: max-content;
         width: 100%;
-        height: 100vh;
+        /* min-height: 100vh; */
     }
 
     body::-webkit-scrollbar {
@@ -444,7 +429,7 @@ body::-webkit-scrollbar-track {
     }
 
     .main {
-        height: 100vh;
+        height: min-content;
         min-height: max-content;
         width: 100%;
         flex-flow: column nowrap;
@@ -491,10 +476,10 @@ body::-webkit-scrollbar-track {
 
     .article {
         width: 100%;
-        height: 100vh;
+        height: max-content;
         min-height: max-content;
-        /* border: 1px solid white; */
     }
+
 
 }
 
