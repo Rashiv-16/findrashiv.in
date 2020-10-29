@@ -601,7 +601,7 @@ body::-webkit-scrollbar-track {
     }
 
     .links {
-        /* width: 150px; */
+        width: 150px;
         flex-wrap: nowrap;
     }
     .introduction {
