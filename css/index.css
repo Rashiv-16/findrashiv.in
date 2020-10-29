@@ -600,5 +600,12 @@ body::-webkit-scrollbar-track {
         width: 30px;
     }
 
-
+    .links {
+        /* width: 150px; */
+        flex-wrap: nowrap;
+    }
+    .introduction {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
