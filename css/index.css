@@ -319,6 +319,11 @@ body::-webkit-scrollbar-track {
     background-image: linear-gradient(to bottom, #2a2a2ab0, #2a2a2ab0),url('../img/landing-pages.jpg');
     background-size: 100% 100%;
 }
+.project-content > .project-3 > div {
+    padding: 10px;
+    background-image: linear-gradient(to bottom, #2a2a2ab0, #2a2a2ab0),url('../img/color-wheel.jpg');
+    background-size: 100% 100%;
+}
 
 
 .contact-content > div {
