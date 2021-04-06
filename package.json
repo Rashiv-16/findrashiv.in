@@ -4,7 +4,7 @@
   "description": "A portfolio website to showcase my works, projects and skills.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "live-server"
   },
   "author": "Abhishek Yadav",
   "license": "ISC"
